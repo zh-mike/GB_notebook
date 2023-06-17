@@ -1,10 +1,16 @@
 # Основные функции
+import time
 
-def add_user(lis):
-    user_mane = input("Добавьте пользователя: ")
-    lis.append('\n' + user_mane)
-    print(f"Контакт {user_mane} успешно добавлен")
-    return lis
+
+def add_note(data):
+    new_note = {
+        'title': input("Введите заголовок заметки: "),
+        'text': input("Введите тело заметки: "),
+        'time': time.strftime('%x.%X')
+    }
+    data['notes'].append(new_note)
+    print("Заметка успешно добавлен")
+    return data
 
 
 def search_data(my_list):
@@ -26,7 +32,7 @@ def del_data(my_list):
     while True:
         for el in my_list:
             if search in el:
-                print(el.strip(),'\n')
+                print(el.strip(), '\n')
                 del_user = el
                 flag += 1
         if flag > 1:

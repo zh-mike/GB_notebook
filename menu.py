@@ -4,17 +4,18 @@ import app
 
 
 def main_menu():
-    contacts_list = dm.read_data()
+    data = dm.read_data()
     while True:
         pri.print_menu()
         op = input("Введите номер варианта: ")
         match op:
             case "1":
-                pri.print_data(contacts_list)
+                pri.print_data(data)
             case "2":
-                contacts_list = app.add_user(contacts_list)
+                data = app.add_note(data)
             case "3":
-                app.search_data(contacts_list)
+                app.search_data(data)
             case "4":
-                app.del_data(contacts_list)
-        dm.write_data(contacts_list)
+                app.del_data(data)
+        dm.write_data(data)
+

@@ -42,8 +42,6 @@ from random import randint
 with open('data.json', 'r') as file:
     data = json.load(file)
 
-print(json.dumps(data, indent=2))
-
-
+print(type(data['notes'][-1]['id']))
 # with open('data.json', 'w') as file:
 #     json.dump(data, file, indent=2)

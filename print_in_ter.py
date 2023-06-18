@@ -13,7 +13,8 @@ def print_menu():
 def print_data(data):
     print("\nСписок заметок:\n")
     for note in data['notes']:
-        print(note["title"])
-        print(note["text"])
-        print(note['time'])
-        print()
+        print_note(note)
+
+def print_note(note):
+    [print(*el) for el in note.items()]
+    print()

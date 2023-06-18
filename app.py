@@ -4,10 +4,10 @@ from print_in_ter import *
 
 def add_note(data):
     new_note = {
-        'id': str(data['notes'][-1]['id'] + 1),
+        'id': str(int(data['notes'][-1]['id']) + 1),
         'title': input("Введите заголовок заметки: "),
         'text': input("Введите тело заметки: "),
-        'time': time.strftime('%x.%X')
+        'time': time.strftime('%y.%m.%d')
     }
     data['notes'].append(new_note)
     print("Заметка успешно добавлен")
